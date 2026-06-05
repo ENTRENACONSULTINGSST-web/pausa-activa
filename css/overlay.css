@@ -1,0 +1,79 @@
+/* css/overlay.css
+   Pantalla de inicio, fin de ronda y pausa
+   Entrena Consulting SAS – Pausa Activa */
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(0, 0, 10, 0.87);
+  z-index: 30;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+#overlay h2 {
+  font-size: clamp(15px, 3.2vw, 24px);
+  color: #00ff88;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.overlay-brand {
+  font-size: clamp(13px, 2.5vw, 18px) !important;
+  color: #00ff88 !important;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+#overlay p {
+  font-size: clamp(9px, 1.5vw, 12px);
+  color: #9090c0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+#overlay .overlay-score {
+  font-size: clamp(11px, 2vw, 15px);
+  color: #ccc;
+}
+
+#overlay .overlay-emoji {
+  font-size: clamp(22px, 5vw, 36px);
+  line-height: 1;
+}
+
+#startBtn,
+#overlay button {
+  margin-top: 12px;
+  padding: 10px 30px;
+  background: #004400;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(11px, 1.8vw, 14px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+#startBtn:hover,
+#overlay button:hover {
+  background: #007700;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
+}
+
+#startBtn:active,
+#overlay button:active {
+  transform: scale(0.97);
+}
+
+/* ── Clase utilitaria para ocultar ── */
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0a0a1a" />
+  <meta name="description" content="Pausa Activa – Juego 8-bits de rescate. Entrena Consulting SAS." />
+  <title>Pausa Activa · Entrena Consulting SAS</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/hud.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/watermark.css" />
+</head>
+<body>
+
+  <div id="gameWrapper">
+
+    <!-- HUD superior -->
+    <div id="hud">
+      <span><span class="hud-label">RESCATADOS:</span> <span class="hud-val" id="scoreEl">0</span></span>
+      <span><span class="hud-label">TIEMPO:</span> <span class="hud-time" id="timerEl">60</span></span>
+      <span><span class="hud-label">CAÍDAS:</span> <span class="hud-val" id="missEl">0</span></span>
+      <span class="hud-brand">ENTRENA SAS</span>
+    </div>
+
+    <!-- Contenedor del canvas -->
+    <div id="canvasContainer">
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Marca de agua -->
+      <div id="watermark">
+        <div class="wm-title">ENTRENA CONSULTING SAS</div>
+        <div class="wm-sub">pausa activa</div>
+      </div>
+
+      <!-- Overlay de inicio / fin -->
+      <div id="overlay">
+        <h2>⬛ PAUSA ACTIVA ⬛</h2>
+        <p class="overlay-brand">ENTRENA CONSULTING SAS</p>
+        <p>← → / A D / touch para mover al rescatista</p>
+        <p>Atrapa al personaje antes de que caiga</p>
+        <p>⏱ 60 segundos · ¡Buena suerte!</p>
+        <button id="startBtn">▶ INICIAR</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Módulos JS (orden importa) -->
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/game.js"></script>
+
+</body>
+</html>

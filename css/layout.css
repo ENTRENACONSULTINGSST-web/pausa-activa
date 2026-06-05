@@ -1,0 +1,75 @@
+/* css/layout.css
+   Sistema de layout responsive: laptop · tablet · móvil
+   Entrena Consulting SAS – Pausa Activa */
+
+/* ── Wrapper principal ── */
+#gameWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100dvh;           /* dvh: respeta la barra del navegador en móvil */
+  padding: 8px 0;
+  background: #050510;
+  gap: 6px;
+}
+
+/* ── Contenedor del canvas + overlay ── */
+#canvasContainer {
+  position: relative;
+  width: 100%;
+  max-width: 900px;          /* laptop: hasta 900 px */
+  aspect-ratio: 16 / 8.3;   /* proporción fija del juego */
+  overflow: hidden;
+}
+
+/* ── Canvas ── */
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #2a2a4a;
+  box-shadow: 0 0 32px rgba(80, 80, 255, 0.18),
+              0 0 4px  rgba(0, 255, 136, 0.10);
+}
+
+/* ════════════════════════════════
+   BREAKPOINTS
+   ════════════════════════════════ */
+
+/* ── Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+  #canvasContainer {
+    max-width: 98vw;
+  }
+}
+
+/* ── Móvil vertical (≤ 600px) ── */
+@media (max-width: 600px) {
+  #gameWrapper {
+    padding: 4px 0;
+    gap: 4px;
+  }
+
+  #gameCanvas {
+    border-width: 2px;
+  }
+}
+
+/* ── Móvil horizontal (landscape + alto limitado) ── */
+@media (max-height: 480px) and (orientation: landscape) {
+  #gameWrapper {
+    padding: 2px 0;
+    gap: 2px;
+  }
+
+  #canvasContainer {
+    max-width: 94vw;
+    aspect-ratio: 16 / 7.8;
+  }
+
+  #hud {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}

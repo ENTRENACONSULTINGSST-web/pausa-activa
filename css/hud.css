@@ -1,0 +1,70 @@
+/* css/hud.css
+   Barra de información superior (puntos, tiempo, caídas)
+   Entrena Consulting SAS – Pausa Activa */
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 5px 14px;
+  background: #0d0d1f;
+  border: 2px solid #2a2a4a;
+  border-bottom: none;              /* se une visualmente al canvas */
+  font-size: clamp(10px, 1.6vw, 14px);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.hud-label {
+  color: #6a6a9a;
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+
+.hud-val {
+  color: #00ff88;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.hud-time {
+  color: #ffe600;
+  font-weight: bold;
+  margin-left: 4px;
+  transition: color 0.3s;
+}
+
+/* Alerta cuando quedan ≤ 10 s */
+.hud-time.danger {
+  color: #ff3333;
+  animation: blink 0.5s step-end infinite;
+}
+
+.hud-miss-danger {
+  color: #ff3333 !important;
+  font-weight: bold;
+}
+
+.hud-brand {
+  color: #2a2a5a;
+  font-size: 0.75em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #hud {
+    padding: 4px 8px;
+    font-size: 10px;
+    gap: 4px;
+  }
+  .hud-brand { display: none; }
+}

@@ -1,0 +1,35 @@
+/* css/reset.css
+   Normalización base para todos los navegadores
+   Entrena Consulting SAS – Pausa Activa */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  image-rendering: pixelated;      /* preserva el look 8-bit en canvas */
+  image-rendering: crisp-edges;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;                /* sin scroll – el juego ocupa toda la pantalla */
+  background: #050510;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
+
+canvas {
+  display: block;
+  touch-action: none;              /* evita scroll accidental en mobile */
+}
